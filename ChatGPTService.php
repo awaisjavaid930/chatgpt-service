@@ -1,4 +1,11 @@
-  public static function askQuestion($question)
+<?php 
+
+namespace App\Http\Services;
+use Illuminate\Support\Facades\Http;
+
+class ChatGPTService {
+
+    public static function askQuestion($question)
     {
         /**
         * CHATGPT_API_KEY Set ENV variable from link (https://platform.openai.com/account/api-)
@@ -16,3 +23,5 @@
         
         return $response->json()['choices'][0]['text'];
     }
+    
+}
